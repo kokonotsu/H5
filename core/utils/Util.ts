@@ -58,4 +58,27 @@ class Util {
         　　}
         　　return true;//返回true，为空对象
     }
+    
+        /**
+     * 转换万
+     */
+    public static labelIsOverLenght(label, num) {
+        var str = null;
+        if (num < 100000) {
+            str = num;
+        }
+        else if (num < 1000000) {
+            str = (num / 10000).toFixed(2) + "万";
+        }
+        else if (num < 100000000) {
+            str = (num / 10000).toFixed(1) + "万";
+        }
+        else if (num >= 100000000) {
+            str = (num / 10000).toFixed(2) + "亿";
+        }
+        if (label) {
+            label.text = str;
+        }
+
+    };
 }
