@@ -1,0 +1,1 @@
+declare function hex_md5(str): string;
