@@ -14,3 +14,22 @@ class Log {
         }
     }
 }
+module Log {
+    export function print(msg: string) {
+        const now = share.Common.formatDateTime( new Date().getTime() ); 
+        var str = now + ":" + msg;
+        console.log(str);
+    }
+
+    export function error(msg: string) {
+        const now = share.Common.formatDateTime( new Date().getTime() ); 
+        var str = now + ":" + msg;
+        console.error(str);
+    }
+
+    export function assert(flag, msg) {
+            const now = share.Common.formatDateTime( new Date().getTime() ); 
+            var str = now + ":" + msg;
+            console.assert(flag, str);
+        }
+}
