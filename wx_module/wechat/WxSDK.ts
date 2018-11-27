@@ -103,6 +103,18 @@ module wxapi {
             this.BannerAds.push(bannerAd);
             return bannerAd;
         }
+        
+          /**
+         * 显示广告,并重新设置高度
+         * @param bannerAd 
+         */
+        public showBannerAd(bannerAd) {
+            let winSize = Laya.Browser.window.wx.getSystemInfoSync()
+            bannerAd.show();
+            bannerAd.onResize(res => {
+                bannerAd.style.top = winSize.windowHeight - bannerAd.style.realHeight;
+            })
+        }
 
         /**
          * 清除所有广告
