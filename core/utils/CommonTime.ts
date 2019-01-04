@@ -17,6 +17,24 @@ module share {
 
             return year + '-' + month + '-' + day + " " + hour + ":" + min + ":" + second;
         }
+                //返回是否为同一天
+        public static isSameDay(time1: any, time2: any) {
+            let Dates1 = new Date(time1);
+            let year1: number = Dates1.getFullYear();
+            let month1: any = (Dates1.getMonth() + 1) < 10 ? '0' + (Dates1.getMonth() + 1) : (Dates1.getMonth() + 1);
+            let day1: any = Dates1.getDate() < 10 ? '0' + Dates1.getDate() : Dates1.getDate();
+
+            let Dates2 = new Date(time2);
+            let year2: number = Dates2.getFullYear();
+            let month2: any = (Dates2.getMonth() + 1) < 10 ? '0' + (Dates2.getMonth() + 1) : (Dates2.getMonth() + 1);
+            let day2: any = Dates2.getDate() < 10 ? '0' + Dates2.getDate() : Dates2.getDate();
+
+            if (year1 != year2 || month1 != month2 || day1 != day2) {
+                return false;
+            } else {
+                return true;
+            }
+        }
 
 
         /**
