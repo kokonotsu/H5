@@ -80,5 +80,20 @@ class Util {
             label.text = str;
         }
 
-    };
+    }
+    
+    /**
+     *定位数组对象中元素位置
+     */
+    public static GetIndex(element, list) {
+        if (list && list.length > 0) {
+            for (let i = 0; i < list.length; i++) {
+                let temp = list[i];
+                if (temp == element) {
+                    return i;
+                }
+            }
+        }
+        return null;
+    }
 }
