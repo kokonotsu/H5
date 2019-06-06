@@ -25,6 +25,18 @@ class RandomUtils extends BaseClass {
         return Math.round(this.limit($from, $end));
     }
 
+/**
+     * 获取包括收尾的真实概率随机值
+     * @param  
+     * @param  
+     */
+    public realInteger($from: number, $end: number): number {
+        $from = Math.min($from, $end);
+        $end = Math.max($from, $end);
+        var range: number = $end - $from + 1;
+        return Math.floor($from + Math.random() * range);
+    }
+
     /**
      * 在一个数组中随机获取一个元素
      * @param arr 数组
