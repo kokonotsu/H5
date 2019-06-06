@@ -34,7 +34,7 @@ class RandomUtils extends BaseClass {
         $from = Math.min($from, $end);
         $end = Math.max($from, $end);
         var range: number = $end - $from + 1;
-        return Math.floor($from + Math.random() * range);
+        return Math.floor(Math.random() * range);
     }
 
     /**
